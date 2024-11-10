@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="multasPane" prefHeight="500.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.MultasController">
+    <children>
+        <Text layoutX="281.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MULTAS"/>
+        <Text layoutX="86.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrícula:"/>
+        <Text layoutX="86.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:"/>
+        <Text layoutX="86.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:"/>
+
+        <TextField fx:id="tvMatricula" layoutX="229.0" layoutY="59.0" prefHeight="25.0" prefWidth="92.0"/>
+        <TextField fx:id="tvPrecio" layoutX="226.0" layoutY="135.0" prefHeight="25.0" prefWidth="85.0"/>
+        <DatePicker fx:id="dpFecha" layoutX="194.0" layoutY="173.0" prefHeight="25.0" prefWidth="180.0"/>
+
+        <Button layoutX="60.0" layoutY="225.0" mnemonicParsing="false" onAction="#insertarMulta" text="INSERTAR"/>
+        <Button layoutX="164.0" layoutY="225.0" mnemonicParsing="false" onAction="#modificarMulta" text="ACTUALIZAR"/>
+        <Button layoutX="300.0" layoutY="225.0" mnemonicParsing="false" onAction="#borrarMulta" text="BORRAR"/>
+        <Button layoutX="423.0" layoutY="225.0" mnemonicParsing="false" onAction="#limpiarCampos" text="LIMPIAR"/>
+
+        <TableView fx:id="tvMultas" layoutX="25.0" layoutY="262.0" onMouseClicked="#seleccionarMulta" prefHeight="200.0"
+                   prefWidth="495.0">
+            <columns>
+                <TableColumn fx:id="tcIdentificador" prefWidth="161.0" text="IDENTIFICADOR MULTA"/>
+                <TableColumn fx:id="tcPrecio" prefWidth="171.0" text="PRECIO"/>
+                <TableColumn fx:id="tcFecha" prefWidth="162.0" text="FECHA"/>
+            </columns>
+        </TableView>
+
+        <Button layoutX="423.0" layoutY="469.0" mnemonicParsing="false" onAction="#salir" text="ATRÁS"/>
+    </children>
+</AnchorPane>
